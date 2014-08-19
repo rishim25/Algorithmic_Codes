@@ -1,5 +1,5 @@
 /*
-Author :  ARVIND PANDEY
+Author :  PARVINDER PANDEY
  */
 #include <bits/stdc++.h>
 using namespace std;
@@ -42,7 +42,7 @@ long long gcd(long long a, long long b)////                 O(log(a+b))
 ////////////////////////////////////////////////////////////////////////////////////CODE BEGINS/////////////////////////////////////////////////////////
 int a[100005][12];
 int ans[100005];
-int main() 
+int main()
 {
     int i,n,m,j;
     cin>>n>>m;
@@ -53,7 +53,7 @@ int main()
     memset(a,0,sizeof a);
     a[0][s[0]-'0']=1;
     for(i=1;i<n;i++)
-    {   
+    {
         temp=s[i]-'0';
         FOR(j,10)
         {
@@ -63,7 +63,7 @@ int main()
                 a[i][j]=a[i-1][j];
         }
     }
-    
+
     for(i=1;i<n;i++)
     {
         temp=s[i]-'0';
@@ -73,19 +73,19 @@ int main()
             if(a[i][j]>0 && temp>j && j!=temp)
             {
                 sump+=(temp-j)*a[i][j];
-                
+
             }
             else if(a[i][j]>0 && temp<j && j!=temp)
             {
                 sumn+=(temp-j)*a[i][j];
-                
+
             }
         }
         ans[i]=sump-sumn;
 
     }
-   
-    
+
+
     while(m--)
     {
         cin>>x;
